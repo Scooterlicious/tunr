@@ -6,7 +6,7 @@ describe MusiciansController do
 			@name = "Diana Ross"
 		end
 
-		describe "goto new musician from" do
+		describe "goto new musician form" do
 			before do
 	  		visit new_musician_path
 	  	end
