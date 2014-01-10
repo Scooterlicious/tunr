@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe MusiciansController do
-	describe "Giving musician name" do
+	describe "Given a musician name" do
 		before do
 			@name = "Diana Ross"
 		end
@@ -9,9 +9,9 @@ describe MusiciansController do
 		describe "goto new musician form" do
 			before do
 	  		visit new_musician_path
-	  	end
+	  		end
 
-	  	it "Create musician from a form" do
+		  	it "Create musician from a form" do
 				fill_in 'name', with: @name
 				click_button "submit"
 				current_path.should == musicians_path

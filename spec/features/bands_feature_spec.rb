@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe BandsController do
-	describe "Giving a band name" do
+	describe "Given a band name" do
 		before do
-			@name = "Gans and Roses"
+			@name = "Guns and Roses"
 		end
 
-		describe "Goto Band form" do
+		describe "Go to new_band_path" do
 			before do
 				visit new_band_path
 			end
