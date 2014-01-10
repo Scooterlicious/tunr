@@ -4,13 +4,14 @@ class AlbumsController < ApplicationController
 	end
 
 	def index
-		@albums = @Album.all
+		@albums = Album.all
 	end
 
 	#create accepts the POST and so we need to store the data here
 	def create
-		@Albums.create({
+		Album.create({
 			name: params[:name]
 			})
+		redirect_to albums_path
 	end
 end

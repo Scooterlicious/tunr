@@ -14,7 +14,7 @@ describe AlbumsController do
 		it "Creates an album from a form" do
 			fill_in 'name', with: @name
 			click_button "submit"
-			current_path.should == musicians_path
+			current_path.should == albums_path
 			page.should have_content(@name)
 
 		end
