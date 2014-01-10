@@ -1,11 +1,12 @@
 Tunr::Application.routes.draw do
 
-  get '/' => 'welcome#home'
+  # get '/' => 'welcome#home'
 
   resources :musicians
   resources :bands
   resources :albums
   resources :song_recordings
+  resources :band_memberships
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
