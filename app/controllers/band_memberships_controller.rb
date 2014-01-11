@@ -18,10 +18,17 @@ class BandMembershipsController < ApplicationController
 	end
 
 	def create
-	 	musician = Musician.find(params[:musician_id])
-	 	band = Band.find(params[:band_id])
-	 	musician.join(band, params[:instrument])
-	 	redirect_to band_path(band)
+		@band_membership = BandMembership.new()
+		@band_membership.musician_id 	= params[:musician_id]
+		@band_membership.band_id 		= params[:band_id]
+		@band_membership.save
+
+	    redirect_to band_memberships_path
+
+	 	# musician = Musician.find(params[:musician_id])
+	 	# band = Band.find(params[:band_id])
+	 	# musician.join(band, params[:instrument])
+	 	# redirect_to band_path(band)
 	end
 
 end
