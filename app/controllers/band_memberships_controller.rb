@@ -1,4 +1,9 @@
 class BandMembershipsController < ApplicationController
+	
+	def index
+		@band_memberships = BandMemberships.all
+	end
+
 	def new
 		@musicians = Musician.all
 		@bands = Band.all

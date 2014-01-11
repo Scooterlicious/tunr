@@ -1,4 +1,8 @@
-<form action="<%= musicians_path %>" method="post">
+<%= render partial: "musician_form", locals: {musician: @musician} %>
+
+<!-- This is the new way to do it with the form helper.  My old technique is below -->
+
+<!-- <form action="<%= musicians_path %>" method="post">
 	<input type="text" name="name" placeholder="Name">
 	<input id="submit" type="submit">
-</form>
+</form> -->

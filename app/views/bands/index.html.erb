@@ -1,7 +1,18 @@
 <h1>Bands</h1>
-<ul>
-<% @bands.each do |band| %>
-<li><%= band.name %></li>
-<% end %>
-</ul>
 
+<table class="table table-hover table-bordered">
+	<% @bands.each do |band|  %>
+	<tr class="band_<%=band.id%>">
+		<td><%= band.name %></td>
+		<td><a href="<%=band_path(band)%>">SHOW</a></td>
+	<!-- 	<td><a href="/bands/<%=band.id%>/edit">EDIT</a></td> -->
+		<td><a href="<%= edit_band_path(band) %>">EDIT</a></td>
+		<td>
+			<form action="<%=band_path(band)%>" method="post">
+			<input type="hidden" value="delete" name="_method">
+			<button class="delete btn-link">DELETE</button>
+		</form>
+		</td>
+	</tr>
+	<% end %>
+</table>
