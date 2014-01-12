@@ -24,11 +24,11 @@ class BandMembershipsController < ApplicationController
 		@band_membership.save
 
 	    redirect_to band_memberships_path
+	end
 
-	 	# musician = Musician.find(params[:musician_id])
-	 	# band = Band.find(params[:band_id])
-	 	# musician.join(band, params[:instrument])
-	 	# redirect_to band_path(band)
+	def destroy
+		BandMembership.find(params[:id]).destroy
+		redirect_to band_memberships_path
 	end
 
 end
