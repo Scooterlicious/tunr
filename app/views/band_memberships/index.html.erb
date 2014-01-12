@@ -1,0 +1,29 @@
+
+<h1>Band Memberships</h1>
+
+<table class="table table-hover table-bordered">
+	<tr>
+		<th>Musician Name</th>
+		<th>Band Name</th>
+		<th>NEW</th>
+		<th>SHOW</th>
+		<th>EDIT</th>
+		<th>DELETE</th>		
+	</tr>
+	<% @band_memberships.each do |band_membership|  %>
+	<tr class="band_membership_<%= band_membership.id %>">
+		<td><%= band_membership.band.name %></td>
+		<td><%= band_membership.musician.name %></td>
+
+		<td><a href="<%= new_band_membership_path(band_membership) %>">NEW</a></td>
+		<td><a href="<%= band_membership_path(band_membership) %>">SHOW</a></td>
+		<td><a href="<%= edit_band_membership_path(band_membership) %>">EDIT</a></td>
+		<td>
+			<form action="<%= band_membership_path(band_membership) %>" method="post">
+			<input type="hidden" value="delete" name="_method">
+			<button class="delete btn-link">DELETE</button>
+		</form>
+		</td>
+	</tr>
+	<% end %>
+</table>

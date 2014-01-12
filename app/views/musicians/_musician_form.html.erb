@@ -1,0 +1,5 @@
+<%= form_for musician  do |f| %>
+  <%= f.label :name, "Name:" %>
+  <%= f.text_field :name, placeholder: "Name", class: "form-control" %>
+  <%= f.submit nil, class:"btn btn-primary", id:"submit" %>
+<% end %>
