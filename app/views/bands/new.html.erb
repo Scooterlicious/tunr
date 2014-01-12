@@ -1,6 +1,11 @@
 <!-- <form action="bands_path" method="post"> -->
-<form action="/bands" method="post">
+<h1>New Band</h1>
+
+<p>Enter new band information</p>
+
+<%= render partial: "band_form", locals: {band: @band} %>
+<!-- <form action="/bands" method="post">
 	<input type="text" name="name" placeholder="BandName">
 	<input id="submit" type="submit">
 
-</form>
+</form> -->

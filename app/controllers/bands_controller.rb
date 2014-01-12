@@ -13,6 +13,7 @@ class BandsController < ApplicationController
 	end
 
 	def new
+		@band = Band.new()
 	end
 
 	def create

@@ -17,6 +17,10 @@ class BandMembershipsController < ApplicationController
 		@bands = Band.all
 	end
 
+	def show
+		@band_membership = BandMembership.find(params[:id])
+	end
+
 	def create
 		@band_membership = BandMembership.new()
 		@band_membership.musician_id 	= params[:musician_id]
