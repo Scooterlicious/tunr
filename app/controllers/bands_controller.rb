@@ -18,7 +18,7 @@ class BandsController < ApplicationController
 
 	def create
 		Band.create({
-			name: params[:name]
+			name: params[:band][:name]
 		})
 		redirect_to bands_path
 	end
