@@ -12,7 +12,7 @@ describe BandsController do
 			end
 
 			it "Create band from a form" do
-				fill_in 'name', with: @name
+				fill_in 'band_name', with: @name
 				click_button "submit"
 				current_path.should == bands_path
 				page.should have_content(@name)
